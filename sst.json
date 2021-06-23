@@ -1,0 +1,7 @@
+{
+  "name": "singapore-hawker-centre-api",
+  "stage": "prod",
+  "region": "ap-southeast-1",
+  "lint": true,
+  "typeCheck": true
+}
