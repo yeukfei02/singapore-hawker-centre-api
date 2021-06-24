@@ -16,7 +16,7 @@ export const getHawkerCentres: APIGatewayProxyHandlerV2 = async (
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       message: "getHawkerCentres",
-      hawkerCentre: [],
+      hawkerCentres: [],
       count: 0,
     }),
   };
@@ -51,7 +51,7 @@ export const getHawkerCentres: APIGatewayProxyHandlerV2 = async (
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       message: "getHawkerCentres",
-      hawkerCentre: singaporeHawkerCentreList,
+      hawkerCentres: singaporeHawkerCentreList,
       count: singaporeHawkerCentreList ? singaporeHawkerCentreList.length : 0,
     }),
   };
