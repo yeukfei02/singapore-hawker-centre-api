@@ -1,10 +1,4 @@
 import { APIGatewayProxyEventV2, APIGatewayProxyHandlerV2 } from "aws-lambda";
-import dynamoose from "dynamoose";
-dynamoose.aws.sdk.config.update({
-  accessKeyId: process.env.MY_AWS_ACCESS_KEY,
-  secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY,
-  region: "ap-southeast-1",
-});
 import _ from "lodash";
 
 import SingaporeHawkerCentre from "../../model/HawkerCentre";
