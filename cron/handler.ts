@@ -35,8 +35,11 @@ export async function fetchHawkerCentreData(): Promise<boolean> {
       offset: offset,
     },
   });
+  console.log("response = ", response);
   if (response) {
     const responseData: HawkerCentre = response.data;
+    console.log("responseData = ", responseData);
+
     if (responseData && responseData.success) {
       const recordList = responseData.result.records;
       if (!_.isEmpty(recordList)) {
