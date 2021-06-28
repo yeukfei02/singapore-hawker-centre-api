@@ -20,6 +20,7 @@ export async function main(): Promise<void> {
 
   while (loopStatus) {
     const finishStatus = await fetchHawkerCentreData(offset);
+    offset += 100;
     if (finishStatus) {
       loopStatus = false;
     }
@@ -44,7 +45,6 @@ export async function fetchHawkerCentreData(offset: number): Promise<boolean> {
       const recordList = responseData.result.records;
       if (!_.isEmpty(recordList)) {
         await storeDataToSingaporeHawkerCentre(recordList);
-        offset += 100;
       } else {
         finishStatus = true;
       }
