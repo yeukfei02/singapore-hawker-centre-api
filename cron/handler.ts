@@ -16,18 +16,18 @@ const ROOT_URL = "https://data.gov.sg";
 export async function main(): Promise<void> {
   let loopStatus = true;
 
+  let offset = 0;
+
   while (loopStatus) {
-    const finishStatus = await fetchHawkerCentreData();
+    const finishStatus = await fetchHawkerCentreData(offset);
     if (finishStatus) {
       loopStatus = false;
     }
   }
 }
 
-export async function fetchHawkerCentreData(): Promise<boolean> {
+export async function fetchHawkerCentreData(offset: number): Promise<boolean> {
   let finishStatus = false;
-
-  let offset = 0;
 
   const response = await axios.get(`${ROOT_URL}/api/action/datastore_search`, {
     params: {
